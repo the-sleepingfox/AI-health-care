@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, jsonify  # Import jsonify
 import numpy as np
 import pandas as pd
 import pickle
-
+import csv
 
 # flask app
 app = Flask(__name__)
@@ -16,6 +16,7 @@ workout = pd.read_csv("datasets/workout_df.csv")
 description = pd.read_csv("datasets/description.csv")
 medications = pd.read_csv('datasets/medications.csv')
 diets = pd.read_csv("datasets/diets.csv")
+symptoms_list = "Symptom-severity.csv"
 
 
 # load model===========================================
@@ -58,14 +59,23 @@ def get_predicted_value(patient_symptoms):
 
 # creating routes========================================
 
+def symp_list(symptoms_list):
+    items=[]
+    with open(symptoms_list, newline='') as csvfile:
+        render= csv.DictReader(csvfile)
+        for row in render:
+            items.append(row['Symptom'])
+    return items
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    items= symp_list('Symptom-severity.csv')
+    return render_template("index.html", items=items)
 
 # Define a route for the home page
 @app.route('/predict', methods=['GET', 'POST'])
 def home():
+    items= symp_list('Symptom-severity.csv')
     if request.method == 'POST':
         symptoms = request.form.get('symptoms')
         # mysysms = request.form.get('mysysms')
@@ -89,7 +99,7 @@ def home():
 
             return render_template('index.html', predicted_disease=predicted_disease, dis_des=dis_des,
                                    my_precautions=my_precautions, medications=medications, my_diet=rec_diet,
-                                   workout=workout)
+                                   workout=workout, items=items)
 
     return render_template('index.html')
 

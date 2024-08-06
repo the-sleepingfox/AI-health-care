@@ -11,7 +11,7 @@
   <style>
 
         body{
-            background-color: rgb(202, 248, 202);
+            background-color: #caf8ca;
         }
 
         .logo {
@@ -54,6 +54,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .modal-header{
+            background-color: #198754;
+            color: white;
+        }
+        .modal-body{
+            background-color: #caf8ca;
         }
 
 
@@ -122,27 +130,27 @@
 
 {% endif %}
 
+
 <!-- Disease Modal -->
     <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;"> <!-- Set header background color inline -->
+                <div class="modal-header"> <!-- Set header background color inline -->
                     <h5 class="modal-title" id="diseaseModalLabel">Predicted Disease</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="background-color: modal-body-color;"> <!-- Set modal body background color inline -->
+                <div class="modal-body"> <!-- Set modal body background color inline -->
                     <p>{{ predicted_disease }}</p>
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- Description Modal -->
     <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
+                <div class="modal-header">
                     <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -157,7 +165,7 @@
     <div class="modal fade" id="precautionModal" tabindex="-1" aria-labelledby="precautionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
+                <div class="modal-header">
                     <h5 class="modal-title" id="precautionModalLabel">Precaution</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -179,7 +187,7 @@
     <div class="modal fade" id="medicationsModal" tabindex="-1" aria-labelledby="medicationsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
+                <div class="modal-header">
                     <h5 class="modal-title" id="medicationsModalLabel">Medications</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -198,7 +206,7 @@
     <div class="modal fade" id="workoutsModal" tabindex="-1" aria-labelledby="workoutsModalLabel" aria-hidden="true">
         <div class="modal-dialog" >
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
+                <div class="modal-header">
                     <h5 class="modal-title" id="workoutsModalLabel">Workouts</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -217,7 +225,7 @@
     <div class="modal fade" id="dietsModal" tabindex="-1" aria-labelledby="dietsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" style="background-color: #020606; color:white;">
+                <div class="modal-header">
                     <h5 class="modal-title" id="dietsModalLabel">Diets</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>

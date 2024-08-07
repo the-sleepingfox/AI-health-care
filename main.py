@@ -16,7 +16,7 @@ workout = pd.read_csv("datasets/workout_df.csv")
 description = pd.read_csv("datasets/description.csv")
 medications = pd.read_csv('datasets/medications.csv')
 diets = pd.read_csv("datasets/diets.csv")
-symptoms_list = "Symptom-severity.csv"
+symptoms_list = "datasets/Symptom-severity.csv"
 
 
 # load model===========================================
@@ -69,27 +69,43 @@ def symp_list(symptoms_list):
 
 @app.route("/")
 def index():
-    items= symp_list('Symptom-severity.csv')
+    items= symp_list(symptoms_list)
+    # items.sort()
     return render_template("index.html", items=items)
 
 # Define a route for the home page
 @app.route('/predict', methods=['GET', 'POST'])
 def home():
-    items= symp_list('Symptom-severity.csv')
+    items= symp_list(symptoms_list)
+    # items.sort()
     if request.method == 'POST':
         symptoms = request.form.get('symptoms')
+        if not symptoms:
+            message= "Please select atleast one symptom"
+            # print(message)
+            return render_template('index.html', message=message, items=items)
+        
+
         # mysysms = request.form.get('mysysms')
         # print(mysysms)
         print(symptoms)
         if symptoms =="Symptoms":
             message = "Please either write symptoms or you have written misspelled symptoms"
-            return render_template('index.html', message=message)
+            return render_template('index.html', message=message, items=items)
         else:
 
             # Split the user's input into a list of symptoms (assuming they are comma-separated)
             user_symptoms = [s.strip() for s in symptoms.split(',')]
             # Remove any extra characters, if any
             user_symptoms = [symptom.strip("[]' ") for symptom in user_symptoms]
+
+            valid_symptoms = symp_list(symptoms_list)
+            invalid_symptoms = [symptom for symptom in user_symptoms if symptom not in valid_symptoms]
+
+            if invalid_symptoms:
+                message = f"The following symptoms are invalid:-  {', '.join(invalid_symptoms)}"
+                return render_template('index.html', message=message, items=items, symptoms=symptoms)
+
             predicted_disease = get_predicted_value(user_symptoms)
             dis_des, precautions, medications, rec_diet, workout = helper(predicted_disease)
 
@@ -99,7 +115,7 @@ def home():
 
             return render_template('index.html', predicted_disease=predicted_disease, dis_des=dis_des,
                                    my_precautions=my_precautions, medications=medications, my_diet=rec_diet,
-                                   workout=workout, items=items)
+                                   workout=workout, items=items, symptoms=symptoms)
 
     return render_template('index.html')
 
@@ -127,4 +143,4 @@ def blog():
 
 if __name__ == '__main__':
 
-    app.run(debug=True)
+    app.run(debug=False)

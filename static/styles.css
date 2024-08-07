@@ -29,11 +29,87 @@
     box-shadow: 0 2px 4px grey;
 }
 
+.form-control{
+    margin-top: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   
+}
+
+.if-message{
+    font-weight: bold;
+    color: red;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+
+.list-container {
+    max-height: 340px;
+    max-width: 1000px;
+    /* margin-right: 200px; */
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    margin-left: 150px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #caf8ca;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* .form-group{
+    margin-bottom: 20px;
+} */
+
+.sym-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #caf8ca;
+}
+
+.sym-list-item {
+    display: inline-block;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease-in-out;
+    /* font-style: oblique; */
+}
+
+.sym-list-item:hover{
+
+    background-color: #2ea46d;
+    color: white;
+
+}
+
+.sym-list-item:active{
+    background-color: #198754;
+    color: whitesmoke;
+}
+
+.active{
+    background-color: #198754;
+    color: whitesmoke;
+}
+
 .predict-btn {
     box-shadow: 0 2px 4px grey
 }
 
+.selected-symptoms-container{
+    background: rgba(253, 253, 253, 0.591);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px grey;
+}
+
 .toggle-button {
+    display: flex;
     padding: 4px;
     margin: 5px 40px 5px 0;
     font-size: 20px;
@@ -71,47 +147,6 @@
 
 .modal-body {
     background-color: #caf8ca;
-}
-
-
-.list-container {
-    max-height: 340px;
-    /* Adjust the height as needed */
-    overflow-y: scroll;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #caf8ca;
-}
-
-.sym-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #caf8ca;
-}
-
-.sym-list-item {
-    display: inline-block;
-    background-color: #ffffff;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease-in-out;
-    /* font-style: oblique; */
-}
-
-.sym-list-item:hover{
-
-    background-color: #2ea46d;
-    color: white;
-
-}
-
-.sym-list-item:active{
-    background-color: #198754;
-    color: whitesmoke;
 }
 
 .footer {

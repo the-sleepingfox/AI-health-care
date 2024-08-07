@@ -20,17 +20,18 @@
     {% include 'navbar.html' %}
 
 
-
-
     <!-- main form of page -->
     <h1 class="mt-4 my-4 text-center text-green">Disease Prediction and Remedy Suggestion</h1>
     <div class=" main-container container my-4 mt-4">
         <form action="/predict" method="post">
             <div class="form-group">
-                <label for="symptoms" style="color: green; font-size: 20px;">Enter Symptoms:</label>
+                <label for="symptoms" style="color: #198754; font-size: 20px;">Enter Symptoms:</label>
                 <input type="text" class="form-control" , id="symptoms" name="symptoms"
-                    placeholder="type symptoms with correct spelling separated by coama such as itching, belly_pain, mild_fever etc ">
+                    placeholder="select one or more symptoms from the below list">
             </div>
+            {% if predicted_disease %}
+            <p><strong>selected symptoms: </strong>{{symptoms}}</p>
+            {% endif %}
             <br>
 
 
@@ -38,17 +39,17 @@
             Start Speech Recognition
         </button> -->
 
-            <br>
             {% if message %}
-            <p>{{ message }}</p>
+            <p class="if-message">
+                {{ message }}
+            </p>
             {% endif %}
-            <br>
 
             <h3>Symptoms List</h3>
             <div class="list-container" id="list-container">
                 <ul class="sym-list">
                     {% for item in items %}
-                    <li class="sym-list-item" onclick="toggleSymptom('{{item}}')">
+                    <li class="sym-list-item" id="sym-list-item" onclick="toggleSymptom(this, '{{item}}')">
                         {{ item }}
                     </li>
                     {% endfor %}
@@ -68,7 +69,6 @@
 
     <h3 class="text-center my-4 mt-4">Results</h3>
     <div class="container">
-
         <div class="result-container">
             <!-- Buttons to toggle display -->
             <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#diseaseModal">Disease</button>
@@ -219,14 +219,16 @@
 
         // Symptoms toggleFunction code 
 
-        function toggleSymptom(symptom) {
+        function toggleSymptom(element, symptom) {
             const input = document.getElementById('symptoms');
             let symptoms = input.value.split(',').map(s => s.trim()).filter(s => s); // Split and trim
 
             if (symptoms.includes(symptom)) {
                 symptoms = symptoms.filter(s => s !== symptom);
+                element.classList.remove('active');
             } else {
                 symptoms.push(symptom);
+                element.classList.add('active');
             }
 
             input.value = symptoms.join(', ');

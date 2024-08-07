@@ -57,8 +57,6 @@ def get_predicted_value(patient_symptoms):
 
 
 
-# creating routes========================================
-
 def symp_list(symptoms_list):
     items=[]
     with open(symptoms_list, newline='') as csvfile:
@@ -66,6 +64,8 @@ def symp_list(symptoms_list):
         for row in render:
             items.append(row['Symptom'])
     return items
+
+# creating routes========================================
 
 @app.route("/")
 def index():

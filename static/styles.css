@@ -74,7 +74,7 @@
 }
 
 
-.scroll-container {
+.list-container {
     max-height: 340px;
     /* Adjust the height as needed */
     overflow-y: scroll;
@@ -98,7 +98,20 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease-in-out;
     /* font-style: oblique; */
+}
+
+.sym-list-item:hover{
+
+    background-color: #2ea46d;
+    color: white;
+
+}
+
+.sym-list-item:active{
+    background-color: #198754;
+    color: whitesmoke;
 }
 
 .footer {

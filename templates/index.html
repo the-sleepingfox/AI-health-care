@@ -30,7 +30,6 @@
                 <label for="symptoms" style="color: green; font-size: 20px;">Enter Symptoms:</label>
                 <input type="text" class="form-control" , id="symptoms" name="symptoms"
                     placeholder="type symptoms with correct spelling separated by coama such as itching, belly_pain, mild_fever etc ">
-
             </div>
             <br>
 
@@ -46,10 +45,10 @@
             <br>
 
             <h3>Symptoms List</h3>
-            <div class="scroll-container">
+            <div class="list-container" id="list-container">
                 <ul class="sym-list">
                     {% for item in items %}
-                    <li class="sym-list-item">
+                    <li class="sym-list-item" onclick="toggleSymptom('{{item}}')">
                         {{ item }}
                     </li>
                     {% endfor %}
@@ -206,6 +205,34 @@
 
 
     <script>
+
+        // symptom Input function code
+
+        // function addToInput(symptom){
+        //     const input= document.getElementById('symptoms');
+        //     if(input.value){
+        //         input.value += ', '+symptom;
+        //     } else{
+        //         input.value= symptom
+        //     }
+        // }
+
+        // Symptoms toggleFunction code 
+
+        function toggleSymptom(symptom) {
+            const input = document.getElementById('symptoms');
+            let symptoms = input.value.split(',').map(s => s.trim()).filter(s => s); // Split and trim
+
+            if (symptoms.includes(symptom)) {
+                symptoms = symptoms.filter(s => s !== symptom);
+            } else {
+                symptoms.push(symptom);
+            }
+
+            input.value = symptoms.join(', ');
+        }
+
+
         const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
         const transcriptionDiv = document.getElementById('transcription');
 

@@ -1,0 +1,140 @@
+.body {
+    background: #caf8ca;
+}
+
+/* Logo styling */
+
+.logo {
+    width: 50px;
+    height: 50px;
+    color: black;
+    margin-top: 0;
+    margin-left: 2px;
+}
+
+.myimg {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+/* Index styling main page styling */
+
+.main-container {
+    background: rgba(253, 253, 253, 0.591);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 4px grey;
+}
+
+.predict-btn {
+    box-shadow: 0 2px 4px grey
+}
+
+.toggle-button {
+    padding: 4px;
+    margin: 5px 40px 5px 0;
+    font-size: 20px;
+    /* font-weight:bold; */
+    width: 140px;
+    border: 2px solid #198754;
+    border-radius: 5px;
+    background: #198754;
+    color: whitesmoke;
+    transition: 0.15s ease-in;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.toggle-button:hover {
+    background-color: rgb(202, 248, 202);
+    color: #198754;
+}
+
+.toggle-button:active {
+    background-color: rgb(33, 81, 33);
+    color: white;
+
+}
+
+.result-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header {
+    background-color: #198754;
+    color: white;
+}
+
+.modal-body {
+    background-color: #caf8ca;
+}
+
+
+.scroll-container {
+    max-height: 340px;
+    /* Adjust the height as needed */
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #caf8ca;
+}
+
+.sym-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #caf8ca;
+}
+
+.sym-list-item {
+    display: inline-block;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* font-style: oblique; */
+}
+
+.footer {
+    height: 40px;
+    width: 100vw;
+    text-align: center;
+    background-color: #198754;
+    color: #caf8ca;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer p {
+    padding: 5px;
+    text-shadow: #ffffff;
+    font-weight: bold;
+}
+
+/* main page styling ends */
+
+
+/* Introduction field in Dev Section  */
+
+.introduction {
+    background: rgba(253, 253, 253, 0.591);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Introduction Field styling End */
+
+
+/* Contack Styling */
+
+.social-links{
+    list-style: none;
+}

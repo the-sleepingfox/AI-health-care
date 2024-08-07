@@ -4,108 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Health Care Center</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
 </head>
 
-<style>
-    body {
-        background-color: #caf8ca;
-    }
-
-    .logo {
-        width: 50px;
-        height: 50px;
-        /* color: black; */
-        margin-top: 0;
-        margin-left: 2px;
-    }
-
-    .myimg {
-        width: 50px;
-        height: 50px;
-        border: 2px solid blac/k;
-        border-radius: 25px;
-    }
-
-    .main-container {
-        background: rgba(253, 253, 253, 0.591);
-        border-radius: 15px;
-        padding: 40px;
-    }
-
-    .toggle-button {
-        padding: 4px;
-        margin: 5px 40px 5px 0;
-        font-size: 20px;
-        /* font-weight:bold; */
-        width: 140px;
-        border: 2px solid #198754;
-        border-radius: 5px;
-        background: #198754;
-        color: whitesmoke;
-        transition: 0.15s ease-in;
-    }
-
-    .toggle-button:hover {
-        background-color: rgb(202, 248, 202);
-        color: #198754;
-    }
-
-    .toggle-button:active {
-        background-color: rgb(33, 81, 33);
-        color: white;
-
-    }
-
-    .result-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .modal-header {
-        background-color: #198754;
-        color: white;
-    }
-
-    .modal-body {
-        background-color: #caf8ca;
-    }
 
 
-    .scroll-container {
-        max-height: 300px;
-        /* Adjust the height as needed */
-        overflow-y: scroll;
-        border: 1px solid #ddd;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #caf8ca;
-    }
 
-    .sym-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        background-color: #caf8ca;
-    }
-
-    .sym-list-item {
-        display: inline-block;
-        background-color: #ffffff;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        /* font-style: oblique; */
-    }
-</style>
-</head>
-
-<body>
+<body class="body">
 
     {% include 'navbar.html' %}
 
@@ -117,7 +27,7 @@
     <div class=" main-container container my-4 mt-4">
         <form action="/predict" method="post">
             <div class="form-group">
-                <label for="symptoms" style="color: green; font-size: 20px;">Select Symptoms:</label>
+                <label for="symptoms" style="color: green; font-size: 20px;">Enter Symptoms:</label>
                 <input type="text" class="form-control" , id="symptoms" name="symptoms"
                     placeholder="type symptoms with correct spelling separated by coama such as itching, belly_pain, mild_fever etc ">
 
@@ -145,7 +55,7 @@
                     {% endfor %}
                 </ul>
             </div>
-            <button type="submit" class="btn btn-success btn-lg"
+            <button type="submit" class="btn btn-success btn-lg predict-btn"
                 style="width: 100%; padding: 14px; margin-top: 16px; margin-bottom: 5px;">Predict</button>
         </form>
     </div>
@@ -287,8 +197,10 @@
     </div>
 
 
-    <footer>
-
+    <footer class="footer">
+        <div>
+            <p>Do not use any medicine without Doctors priscription.</p>
+        </div>
     </footer>
 
 

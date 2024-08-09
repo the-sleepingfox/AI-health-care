@@ -1,16 +1,31 @@
-# Personalized-Medical-Recommendation-System-with-Machine-Learning
-Welcome to our cutting-edge Personalized Medical Recommendation System, a powerful platform designed to assist users in understanding and managing their health. Leveraging the capabilities of machine learning, our system analyzes user-input symptoms to predict potential diseases accurately. Here's what sets our system apart:
+# Human Disease Prediction System
+## How to run the project
+First Download the Project or open the folder in Vs Code or any other code editor of your choice
 
-User-Friendly Interface: Our intuitive interface allows users to input their symptoms effortlessly, creating a seamless user experience.
+Open Terminal and create a virtual environment with running the folloing code in terminal
+``` python -m venv [environment name of your choice] ```
+After the process is completed, activate the environment
+``` ./env/Script/activate ```
 
-Advanced Machine Learning Models: We've integrated state-of-the-art machine learning models that accurately predict diseases based on input symptoms, ensuring reliable and precise results.
+Now it's time to install the requrements from the requirements.txt by running the ``` pip install -r requirements.txt ``` command
 
-Tailored Recommendations: Receive personalized recommendations for the top 5 medicines, prescription details, and even workout routines based on the predicted disease.
+now go inside the folder where main.py is stored and run the ``` python main.py ``` or ``` python main.py runserver ``` command
 
-Flask App Integration: The entire system is powered by a Flask web application, making it easily accessible to users. Experience the convenience of accessing healthcare recommendations from anywhere.
+```ctrl+click``` the link shown in the terminal or go to your browser and enter the link ``` 127.0.0.1:5000 ```  
 
-Privacy and Security: We prioritize user privacy and data security. Your health information is handled with the utmost confidentiality, adhering to the highest industry standards.
+## Personalized-Medical-Recommendation-System-with-Machine-Learning
+Welcome to our state-of-the-art Personalized Medical Recommendation System—a robust platform designed to help you better understand and manage your health. By harnessing the power of machine learning, our system precisely analyzes your symptoms to predict potential diseases. Here’s what makes our system stand out:
 
-Continuous Improvement: Our system is designed for continuous improvement. As we gather more data, the machine learning models evolve, providing increasingly accurate and relevant recommendations.
+- **User-Friendly Interface:** Our easy-to-use interface allows you to input your symptoms with ease, ensuring a smooth and seamless experience.
 
-Take charge of your health with our Personalized Medical Recommendation System. Your well-being is our priority, and we're dedicated to providing you with the tools and insights you need for a healthier, happier life.
+- **Advanced Machine Learning Models:** We employ cutting-edge machine learning models to predict diseases based on your symptoms, delivering accurate and trustworthy results.
+
+- **Tailored Recommendations:** Get personalized suggestions for the top 5 medicines, detailed prescriptions, and even workout plans based on your predicted condition.
+
+- **Flask App Integration:** The system is powered by a Flask web application, offering convenient access to healthcare recommendations from anywhere.
+
+- **Privacy and Security:** We prioritize your privacy and data security, treating your health information with the highest level of confidentiality and adhering to industry-leading standards.
+
+- **Continuous Improvement:** Our system continuously evolves. With more data, our machine learning models refine their accuracy, providing increasingly precise and relevant recommendations.
+
+Take control of your health with our Personalized Medical Recommendation System. Your well-being is our top priority, and we're committed to providing the tools and insights you need for a healthier, happier life.

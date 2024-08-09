@@ -1,17 +1,20 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #198754,  #74ae74);">
     <div class="container-fluid">
-        <!-- Logo at the top-left corner -->
-        <div class="logo">
-            <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="">
-        </div>
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="{{ url_for('static', filename='img.png') }}" alt="" class="myimg me-2" style="width: 40px;">
+            Health Center
+        </a>
 
-        <a class="navbar-brand" href="/">Health Center</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Toggle Button for Mobile View -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar Links and Div Aligned to the Right -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
@@ -28,11 +31,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
+                <!-- Dropdown Example -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li> -->
             </ul>
-            <form class="d-flex" action="https://www.google.com/search" method="GET" role="search" target="_blank">
-                <input type="text" name="q" class="form-control me-2" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
+
+            <!-- Div Aligned to the Right -->
+            <div class="d-flex ms-auto align-items-center">
+                <!-- Content for the right-aligned div -->
+                <form class="d-flex" action="https://www.google.com/search" method="GET" role="search" target="_blank">
+                    <input type="text" name="q" class="form-control me-2 rounded-pill" placeholder="Search" aria-label="Search" style="border: none;">
+                    <button class="btn btn-outline-light rounded-pill" type="submit">Search</button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

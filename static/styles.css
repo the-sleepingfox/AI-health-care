@@ -4,21 +4,32 @@
 
 /* Logo styling */
 
-.logo {
+/* .logo {
     width: 50px;
     height: 50px;
     color: black;
     margin-top: 0;
     margin-left: 2px;
     margin-right: 5px;
-}
+} */
 
 .myimg {
-    width: 48px;
-    height: 48px;
-    /* border: 2px solid black; */
+    /* width: 48px; */
+    /* height: 48px; */
     border-radius: 25px;
 }
+
+/* .nav-item{
+    color: #caf8ca;
+}
+
+.nav-item.active{
+    box-shadow: 1px 1px 8px grey;
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+    padding: 1px;
+    border-radius: 4px;
+} */
 
 /* Index styling main page styling */
 
@@ -48,8 +59,8 @@
     /* margin-right: 200px; */
     overflow-y: scroll;
     border: 1px solid #ddd;
-    margin-left: 150px;
-    margin-right: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 10px;
     border-radius: 5px;
     background-color: #caf8ca;
@@ -69,6 +80,7 @@
 }
 
 .sym-list-item {
+    cursor: pointer;
     display: inline-block;
     background-color: #ffffff;
     margin: 10px;
@@ -97,7 +109,7 @@
 }
 
 .predict-btn {
-    box-shadow: 0 2px 4px grey
+    box-shadow: 0 2px 4px grey;
 }
 
 .selected-symptoms-container{

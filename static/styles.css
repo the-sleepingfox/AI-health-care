@@ -19,17 +19,25 @@
     border-radius: 25px;
 }
 
-/* .nav-item{
-    color: #caf8ca;
+/* Nav bar */
+
+.drop-nav li{
+    text-align: center;
+    transition: 0.2s ease-in-out;
 }
 
-.nav-item.active{
-    box-shadow: 1px 1px 8px grey;
-    background-color: #f1f1f1;
-    transform: translateY(-2px);
-    padding: 1px;
-    border-radius: 4px;
-} */
+.drop-nav li:hover{
+    background-color: #198754;
+    color: white;
+}
+
+.drop-nav li a{
+    text-decoration: none;
+    color: #198754;
+}
+.drop-nav li a:hover{
+    color: white;
+}
 
 /* Index styling main page styling */
 
